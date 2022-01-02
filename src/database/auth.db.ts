@@ -16,7 +16,7 @@ class UserDB {
     }
   };
 
-  signUp = async (config: UserInterface) => {
+  signUp = async (config: UserInterface): Promise<void | string> => {
     try {
       const user = new User(config);
       const salt = bcrypt.genSaltSync();

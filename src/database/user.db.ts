@@ -3,7 +3,7 @@ import User from "../models/user.model";
 import { UserInterface, GetUser } from "../interfaces/user.interfaces";
 
 class UserDB {
-  getUser = async (email: string): Promise<GetUser> => {
+  getUser = async (email: string): Promise<GetUser | undefined> => {
     try {
       // @ts-ignore
       return await User.findOne({ email }, "name lastName email ");
